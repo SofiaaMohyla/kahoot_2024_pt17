@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p> Запитання</p>
+<p>{{question[2]}}</p>
+
+
+<form method="post" action="{{ url_for('answer_func',quizz_id=quizz_id) }}">
+    {% for option in options%}
+    <div>
+    <input id="option_{{loop.index}}" type="radio" name="answer" value="{{option[3]}}"/>
+    <label for="option_{{loop.index}}">{{option[2]}}</label>
+    </div>
+    {% endfor %}
+
+    <button type="submit"> Відповісти </button>
+
+</form>
+{% endblock %}

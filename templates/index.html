@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p> Деякий вміст сторінки home page</p>
+
+{% for quiz in quizzes %}
+    <h2>{{ quiz[1] }} </h2>
+    <p>{{ quiz[2] }}</p>
+    <a href="/quizz/{{quiz[0]}}">Перейти</a>
+{% endfor %}
+
+{% endblock %}
